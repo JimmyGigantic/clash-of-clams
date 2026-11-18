@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f6ee"><meta name="description" content="Meet Shelldon and his crew in a cozy, no-loss idle autobattler. Fight reef crabs, earn pearls, and grow your clam crew.">
+<meta property="og:title" content="Clash of Clams"><meta property="og:description" content="A tiny reef adventure. Your clams fight, earn pearls, and always win."><meta property="og:type" content="website"><meta property="og:image" content="share.png">
+<title>Clash of Clams · Battle Reef</title><link rel="icon" href="shell.png"><link rel="preload" href="jersey-10.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="game.css"><script defer src="reef.js"></script><script defer src="game.js"></script>
+</head>
+<body>
+<header class="topbar"><div class="wrap top-inner">
+  <div class="brand"><img src="shell.png" width="48" height="48" alt=""><span>CLASH <small>OF</small> CLAMS</span></div>
+  <nav aria-label="Game tools"><button id="sound" class="tool square" aria-label="Turn sound on" title="Turn sound on"><i data-icon="mute"></i></button><button class="tool" id="help" aria-label="How to play"><i data-icon="book"></i><span>How to play</span></button><button id="share" class="tool share" aria-label="Share game"><i data-icon="share"></i><span>Share game</span></button></nav>
+</div></header>
+<main class="wrap">
+  <div class="battle-heading"><div class="heading-group"><div class="eyebrow"><span class="tiny-lines"></span>IDLE AUTOBATTLER</div><h1>Battle Reef</h1></div>
+  <div class="wallet" aria-label="Pearl balance"><img src="pearl-icon.png" alt=""><div><span class="small-label">PEARLS</span><strong id="balance">30</strong></div></div></div>
+  <section class="cabinet" aria-label="Live battleground">
+    <div class="arena" id="arena">
+      <div class="water-bg"></div><div class="bubbles" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+      <div class="arena-top"><div class="region"><div class="wave"><i data-icon="flag"></i>WAVE <span id="wave">01</span></div><div class="place" id="place">Sunlit Shoals</div></div><div class="live"><b></b><span id="live-text">Auto-battling</span></div></div>
+      <div class="support support-mage" id="ally1" hidden><img src="pearl.png" alt="Pearl helping Shelldon"></div><div class="support support-guard" id="ally2" hidden><img src="barnacle.png" alt="Barnacle helping Shelldon"></div>
+      <div class="fighter knight"><div class="shadow"></div><div class="figure" id="knight"><img src="shelldon.png" alt="Shelldon, a clam knight with a blue bandana and a sword"></div><div class="tag ally-tag"><span></span>Shelldon</div></div>
+      <div class="fighter rival"><div class="shadow"></div><div class="figure" id="crab"><img src="crab.png" alt="A red reef crab with raised claws"></div><div class="tag rival-tag"><span></span><span id="enemy-name">Reef Crab</span></div><div id="health" class="health" role="progressbar" aria-label="Enemy health" aria-valuemin="0" aria-valuemax="100"><b id="hpbar"></b></div></div>
+      <div class="effects" id="effects" aria-hidden="true"></div><div id="win" class="wave-win" hidden></div>
+    </div>
+    <div class="strip"><div class="combat-message"><i data-icon="swords"></i><span id="combat">Shelldon squares up to a Reef Crab.</span></div><div class="battle-controls"><button class="dark-tool" id="speed" aria-label="Battle speed, 1 times" title="Change battle speed"><i data-icon="fast"></i><span>1×</span></button><button class="dark-tool pause-btn" id="pause" aria-label="Pause battle" title="Pause battle"><i data-icon="pause"></i></button></div></div>
+  </section>
+  <section class="crew" aria-labelledby="crew-label">
+    <div class="section-row"><div class="crew-heading"><i data-icon="crew"></i><h2 id="crew-label">Your Crew</h2></div><span class="crew-power"><i data-icon="bolt"></i><strong id="power">3</strong> crew power</span></div>
+    <div class="cards" id="cards"></div>
+  </section>
+  <footer><span><img src="shell.png" alt="">Tiny Gigantic Games</span><span id="save-note"><i data-icon="save"></i>Progress saved on this device</span></footer>
+</main>
+<dialog id="dialog"><div class="dialog-top"><h2 id="dialog-title">How to play</h2><button class="tool square close" title="Close" aria-label="Close"><i data-icon="close"></i></button></div><div id="dialog-content"></div></dialog>
+<div id="toast" role="status"></div>
+</body></html>
